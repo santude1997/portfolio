@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaFacebook, FaLinkedin, FaYoutube, FaGithub } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-// import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 const Logo = "<DE/>";
 const Navbar = () => {
@@ -20,45 +20,51 @@ const Navbar = () => {
         >
           <ul>
             <li>
-              <a href="#">Home</a>
+              <NavLink to="/">Home</NavLink>
             </li>
 
             <li>
-              <a href="#">About</a>
+              <NavLink to="/About">About</NavLink>
             </li>
             <li>
-              <a href="#">Carrer</a>
+              <NavLink to="/Career">Career</NavLink>
             </li>
             <li>
-              <a href="#">Education</a>
+              <NavLink to="/Education">Education</NavLink>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <NavLink to="/Contact">Contact</NavLink>
             </li>
           </ul>
         </div>
         <div className="social-media">
           <ul className="social-media-desktop">
             <li>
-              <a href="#" target="_blank">
+              <Link
+                to={"https://www.facebook.com/santu.de.3979"}
+                target="_blank"
+              >
                 <FaFacebook className="facebook" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" target="_blank">
+              <Link
+                to={"https://www.linkedin.com/in/santu-de-812571158/"}
+                target="_blank"
+              >
                 <FaLinkedin className="linkdin" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" target="_blank">
+              <Link to={"https://github.com/santude1997"} target="_blank">
                 <FaGithub className="github" />
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="hamburger-menu">
-            <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
+            <Link to={"#"} onClick={() => setShowMediaIcons(!showMediaIcons)}>
               <GiHamburgerMenu />
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
